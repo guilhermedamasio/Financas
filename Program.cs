@@ -35,3 +35,11 @@ else
 {
     Console.WriteLine("Opção inválida. Por favor, escolha uma opção válida.");
 }
+
+enum Painel
+{
+    Receitas = 1,
+    Despesas = 2,
+    Investimentos = 3,
+    Sair = 0
+}

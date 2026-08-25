@@ -10,6 +10,7 @@ namespace Financas
         public DateTime Data { get; set; }
         public string Descricao { get; set; }
         public double Valor { get; set; }
+        public TipoTransacao Tipo { get; set; }
         public enum TipoTransacao
         {
             Receita,

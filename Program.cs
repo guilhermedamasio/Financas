@@ -1,4 +1,4 @@
 ﻿using Financas;
 
-Menu meuMenu = new Menu();
-meuMenu.ExibirOpcoes();
+App meuApp = new App();
+meuApp.Iniciar();

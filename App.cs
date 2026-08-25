@@ -10,8 +10,25 @@ namespace Financas
         {
             Menu meuMenu = new Menu();
             meuMenu.ExibirOpcoes();
+            Painel respostaPainel = (Painel)Convert.ToInt32(Console.ReadLine());
+            switch(respostaPainel) 
+            {
+                case Painel.Receitas:
+                    Console.WriteLine("Você está no Painel de Receitas.");
+                    break;
+                case Painel.Despesa:
+                    Console.WriteLine("Você está no Painel de Despesas.");
+                    break;
+                case Painel.Investimento:
+                    Console.WriteLine("Você está no Painel de Investimentos.");
+                    break;
+                case Painel.Sair:
+                    Console.WriteLine("Saindo do aplicativo.");
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida.");
+                    break;
+            }
         }
-
-
     }
 }

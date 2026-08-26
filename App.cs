@@ -12,6 +12,7 @@ namespace Financas
             meuMenu.ExibirOpcoes();
 
             Painel respostaPainel = (Painel)Convert.ToInt32(Console.ReadLine());  // 1ª leitura, ANTES do while
+            var lista = new List<Transacao>();
 
             while (respostaPainel != Painel.Sair)  // testa a variável já existente
             {
@@ -21,7 +22,13 @@ namespace Financas
                         Console.WriteLine("Você está no Painel de Receitas.");
                         Console.WriteLine("Digite o valor da receita:");
                         double valorReceita = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Digite de onde veio o dinheiro da receita:");
+                        string descricaoReceita = Console.ReadLine();
+
+                        lista.Add(new Transacao { Descricao = descricaoReceita, Valor = valorReceita, Tipo = Transacao.TipoTransacao.Receita, Data = DateTime.Now});
+
                         Console.WriteLine($"Receita registrada: R$ {valorReceita:F2}");
+
                         Console.WriteLine("Deseja encerrar o aplicativo? (s/n)");
                         string encerrar = Console.ReadLine();
                         if (encerrar.ToLower() == "s")

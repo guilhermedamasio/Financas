@@ -27,6 +27,7 @@ namespace Financas
                         if (encerrar.ToLower() == "s")
                         {
                             respostaPainel = Painel.Sair;
+                            continue;
                         }
                         else
                         {
@@ -43,6 +44,7 @@ namespace Financas
                         if (encerrar2.ToLower() == "s")
                         {
                             respostaPainel = Painel.Sair;
+                            continue;
                         }
                         else
                         {
@@ -59,6 +61,7 @@ namespace Financas
                         if (encerrar3.ToLower() == "s")
                         {
                             respostaPainel = Painel.Sair;
+                            continue;
                         }
                         else
                         {

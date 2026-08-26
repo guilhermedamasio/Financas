@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Financas
@@ -90,12 +91,34 @@ namespace Financas
                         Console.WriteLine("Opção inválida.");
                         break;
                 }
+
+
+                double somarSaldo = 0;
+                double totalInvestimento = 0;
                 if (lista.Count > 0)
                 {
                     Console.WriteLine("Transações registradas:");
                     foreach (var transacao in lista)
                     {
+                        if (transacao.Tipo == Transacao.TipoTransacao.Receita)
+                        {
+                            somarSaldo = somarSaldo + transacao.Valor;
+                        }
+                        else if (transacao.Tipo == Transacao.TipoTransacao.Despesa)
+                        {
+                            somarSaldo = somarSaldo - transacao.Valor;
+                        }
+                        else if (transacao.Tipo == Transacao.TipoTransacao.Investimento)
+                        {
+                            totalInvestimento = totalInvestimento + transacao.Valor;
+                            somarSaldo = somarSaldo - transacao.Valor;
+                        }
+
+
+                        Console.WriteLine("Valor total em receitas: R$" + somarSaldo.ToString("F2"));
+                        Console.WriteLine("Valor total em investimentos: R$" + totalInvestimento.ToString("F2"));
                         Console.WriteLine($"{transacao.Data:d}: {transacao.Tipo} - R${transacao.Valor:F2}");
+                        
                     }
                 }
                 else

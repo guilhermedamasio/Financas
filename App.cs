@@ -25,7 +25,7 @@ namespace Financas
                         Console.WriteLine("Digite de onde veio o dinheiro da receita:");
                         string descricaoReceita = Console.ReadLine();
 
-                        lista.Add(new Transacao { Descricao = descricaoReceita, Valor = valorReceita, Tipo = Transacao.TipoTransacao.Receita, Data = DateTime.Now});
+                        lista.Add(new Transacao { Descricao = descricaoReceita, Valor = valorReceita, Tipo = Transacao.TipoTransacao.Receita, Data = DateTime.Now });
 
                         Console.WriteLine($"Receita registrada: R$ {valorReceita:F2}");
 
@@ -90,8 +90,20 @@ namespace Financas
                         Console.WriteLine("Opção inválida.");
                         break;
                 }
-
+                if (lista.Count > 0)
+                {
+                    Console.WriteLine("Transações registradas:");
+                    foreach (var transacao in lista)
+                    {
+                        Console.WriteLine($"{transacao.Data:d}: {transacao.Tipo} - R${transacao.Valor:F2}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Nenhuma transação registrada.");
+                }
                 respostaPainel = (Painel)Convert.ToInt32(Console.ReadLine());  // relê no FINAL do loop, atualiza a mesma variável
+
             }
         }
     }

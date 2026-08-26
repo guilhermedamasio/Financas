@@ -8,12 +8,13 @@ namespace Financas
     {
         public void ExibirOpcoes()
         {
+            Console.Clear();
             Console.WriteLine("Seja bem-vindo(a) ao aplicativo de Finanças do Guilherme Damasio!\n");
             Console.WriteLine("Qual painel você deseja acessar?\n");
             Console.WriteLine("1. Painel de Receitas");
             Console.WriteLine("2. Painel de Despesas");
             Console.WriteLine("3. Painel de Investimentos");
-            Console.WriteLine("0. Sair");
+            Console.WriteLine("0. Sair\n");
         }
     }
 }

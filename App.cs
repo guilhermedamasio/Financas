@@ -41,10 +41,15 @@ namespace Financas
                             meuMenu.ExibirOpcoes();
                         }
                         break;
+
                     case Painel.Despesa:
                         Console.WriteLine("Você está no Painel de Despesas.");
                         Console.WriteLine("Digite o valor da despesa:");
                         double valorDespesa = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Digite de onde veio o dinheiro da despesa:");
+                        string descricaoDespesa = Console.ReadLine();
+                        lista.Add(new Transacao { Descricao = descricaoDespesa, Valor = valorDespesa, Tipo = Transacao.TipoTransacao.Despesa, Data = DateTime.Now });
+
                         Console.WriteLine($"Despesa registrada: R$ {valorDespesa:F2}");
                         Console.WriteLine("Deseja encerrar o aplicativo? (s/n)");
                         string encerrar2 = Console.ReadLine();
@@ -62,6 +67,9 @@ namespace Financas
                         Console.WriteLine("Você está no Painel de Investimentos.");
                         Console.WriteLine("Digite o valor do investimento:");
                         double valorInvestimento = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Digite de onde veio o dinheiro do investimento:");
+                        string descricaoInvestimento = Console.ReadLine();
+                        lista.Add(new Transacao { Descricao = descricaoInvestimento, Valor = valorInvestimento, Tipo = Transacao.TipoTransacao.Investimento, Data = DateTime.Now });
                         Console.WriteLine($"Investimento registrado: R$ {valorInvestimento:F2}");
                         Console.WriteLine("Deseja encerrar o aplicativo? (s/n)");
                         string encerrar3 = Console.ReadLine();
